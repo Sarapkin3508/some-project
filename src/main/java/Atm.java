@@ -69,7 +69,7 @@ public class Atm {
                 }
 
 
-                }while (countOfMoney >= countOfGiven);
+                }while (countOfMoney >= countOfGiven + 5);
                 System.out.println("Выдано всего: " + countOfGiven);
                 System.out.println("Купюр осталось: " + "\n" + BillOf5.countOfBills5 + " купюр - номинала 5" + "\n" +
                         BillOf10.countOfBills10 + " купюр - номинала 10" + "\n" +
