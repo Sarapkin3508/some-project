@@ -24,17 +24,10 @@ public class App {
 
 
         Atm atm = new Atm(balance, listOfBills);
+
+        /** countOfMoney is Input of this app**/
         atm.giveMoney(1125, listOfBills);
 
-
-           /*
-
-            countOfGiven = bills[0].reduceBill(countOfGiven);
-            maxBills.put(bills[0], maxBills.get(bills[0])-1);
-            System.out.println("Выдана одна купюра " + bills[0]);
-            }
-
-            */
 
 
         }
