@@ -1,48 +1,51 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
-        int numberOf5 = 20;
-        int numberOf10 = 15;
-        int numberOf20 = 12;
-        int numberOf50 = 8;
-        int numberOf100 = 5;
-        int balance = numberOf5*5 + numberOf10*10 + numberOf20*20
-                + numberOf50*50 + numberOf100*100 ;
+        BillOf5.countOfBills5 = 25;
+        BillOf10.countOfBills10 = 15;
+        BillOf20.countOfBills20 = 12;
+        BillOf50.countOfBills50 = 8;
+        BillOf100.countOfBills100 = 5;
+        int balance = BillOf5.countOfBills5  * 5 +  BillOf10.countOfBills10 * 10 + BillOf20.countOfBills20 * 20
+                + BillOf50.countOfBills50 * 50 +  BillOf100.countOfBills100 * 100;
 
         FactoryOfBills factoryOfBills = new FactoryOfBills();
 
-        List<HashMap<Bill, Integer>> listOfBills = new ArrayList<>();
-
-        HashMap<Bill, Integer> hashMapOf5 = new HashMap<>();
-        hashMapOf5.put(factoryOfBills.createBillOf5(), numberOf5);
+        List<Bill> listOfBills = new ArrayList<>();
 
 
-        HashMap<Bill, Integer> hashMapOf10 = new HashMap<>();
-        hashMapOf10.put(factoryOfBills.createBillOf10(), numberOf10);
-
-        HashMap<Bill, Integer> hashMapOf20 = new HashMap<>();
-        hashMapOf20.put(factoryOfBills.createBillOf20(), numberOf20);
-
-        HashMap<Bill, Integer> hashMapOf50 = new HashMap<>();
-        hashMapOf50.put(factoryOfBills.createBillOf50(), numberOf50);
-
-        HashMap<Bill, Integer> hashMapOf100 = new HashMap<>();
-        hashMapOf100.put(factoryOfBills.createBillOf100(), numberOf100);
-
-        listOfBills.add(hashMapOf5);
-        listOfBills.add(hashMapOf10);
-        listOfBills.add(hashMapOf20);
-        listOfBills.add(hashMapOf50);
-        listOfBills.add(hashMapOf100);
+        listOfBills.add(factoryOfBills.createBillOf5());
+        listOfBills.add(factoryOfBills.createBillOf10());
+        listOfBills.add(factoryOfBills.createBillOf20());
+        listOfBills.add(factoryOfBills.createBillOf50());
+        listOfBills.add(factoryOfBills.createBillOf100());
 
 
-        Atm atm = new Atm(balance,listOfBills);
 
-        atm.giveMoney(455,listOfBills);
+        Atm atm = new Atm(balance, listOfBills);
+        atm.giveMoney(1125, listOfBills);
+
+
+           /*
+
+            countOfGiven = bills[0].reduceBill(countOfGiven);
+            maxBills.put(bills[0], maxBills.get(bills[0])-1);
+            System.out.println("Выдана одна купюра " + bills[0]);
+            }
+
+            */
+
+
+        }
 
 
     }
-}
+
+
+
+
+
+
+
+

@@ -3,4 +3,6 @@ public interface Bill {
 
     int reduceBill(int ded);
 
+    int numberOfBills();
+
 }
